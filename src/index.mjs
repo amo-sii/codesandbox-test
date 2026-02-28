@@ -202,6 +202,260 @@ const SUPPLEMENTS = {
   ],
 };
 
+// ===== Career Roadmap Data =====
+const ROADMAP = [
+  {
+    year: 2022,
+    age: 29,
+    salary: "360万",
+    theme: "基礎力磨く - 汎用的知識の証明",
+    status: "done",
+    items: [
+      "Oracle Java Silver", "Pythonエンジニア認定", "Oracle SQL Silver",
+      "Oracle DBA Silver", "LPIC1", "AWS SAA + HTML5 Level1",
+      "JSTQB + Excel VBA + 簿記3級",
+    ],
+  },
+  {
+    year: 2023,
+    age: 30,
+    salary: "480万",
+    theme: "応用力を磨く - 専門的知識の獲得",
+    status: "done",
+    items: [
+      "基本情報", "DVA", "SOA + データ分析 + FP3",
+      "IT基礎実践 + リファクタリング + テスト",
+      "ポートフォリオ + AWS演習 + 応用情報",
+      "SAP + cloudtech + G検定 + ビジネス会計3級",
+      "ITストラテジスト学習開始",
+    ],
+  },
+  {
+    year: 2024,
+    age: 31,
+    salary: "670万",
+    theme: "専門性を磨く - 富士通入社",
+    status: "done",
+    items: [
+      "転職活動 (1-4月)", "富士通入社 (6月 / 600万)",
+      "E検定学習 (4単元)", "新プロジェクト適応",
+    ],
+  },
+  {
+    year: 2025,
+    age: 32,
+    salary: "800万",
+    theme: "AWS上流 + AI + ServiceNow",
+    status: "done",
+    items: [
+      "仕事慣れる (1-7月)", "CSA (8-9月)",
+      "Discovery (10月)", "PMP + なぜコンピュータ (11-12月)",
+    ],
+  },
+  {
+    year: 2026,
+    age: 33,
+    salary: "900万",
+    theme: "GAFA・外資コンサル級スキル獲得",
+    status: "current",
+    items: [
+      "PMP + E検定", "CMDB + Delta更新", "Azure 900",
+      "SAM + VR", "AWS Professional", "AWS DevOps",
+      "E資格", "AWS ML + cloudtech",
+      "セキスペ", "ITストラテジスト + TOEIC",
+    ],
+  },
+  {
+    year: 2027,
+    age: 34,
+    salary: "900万",
+    theme: "転職準備 - コンサルタントへ",
+    status: "future",
+    items: [
+      "要件定義 + TOEIC500 (1月)", "なぜネットワーク + TOEIC600 (2月)",
+      "なぜデータベース + TOEIC700 (3月)", "なぜプログラム + TOEIC800 (4月)",
+      "なぜシステムはダウンするのか (5月)", "コンサルタント転職 (6月)",
+    ],
+  },
+  {
+    year: 2030,
+    age: 37,
+    salary: "1000万",
+    theme: "NTT転職 + シーシャ屋準備",
+    status: "future",
+    items: ["NTT転職", "シーシャ屋準備"],
+  },
+  {
+    year: 2033,
+    age: 40,
+    salary: "2000万",
+    theme: "フリーランス + シーシャ屋開業",
+    status: "future",
+    items: ["フリーランス独立", "シーシャ屋開業"],
+  },
+  {
+    year: 2043,
+    age: 50,
+    salary: "3000万",
+    theme: "関東関西30店舗 + 東南アジア",
+    status: "future",
+    items: ["関東関西30店舗展開", "東南アジアで余生を過ごす"],
+  },
+];
+
+const MONTHLY_PLAN_2026 = [
+  { month: 1, tasks: "PMP + E検定", status: "done" },
+  { month: 2, tasks: "CMDB + E検定 + Delta更新", status: "done" },
+  { month: 3, tasks: "CMDB + PMP + Azure 900", status: "current" },
+  { month: 4, tasks: "SAM + VR", status: "future" },
+  { month: 5, tasks: "AWS Professional", status: "future" },
+  { month: 6, tasks: "AWS Professional", status: "future" },
+  { month: 7, tasks: "AWS DevOps", status: "future" },
+  { month: 8, tasks: "E資格", status: "future" },
+  { month: 9, tasks: "AWS ML + cloudtech", status: "future" },
+  { month: 10, tasks: "セキスペ + cloudtech", status: "future" },
+  { month: 11, tasks: "ITストラテジスト + ビジネス書 + TOEIC400", status: "future" },
+  { month: 12, tasks: "ITストラテジスト + TOEIC400", status: "future" },
+];
+
+const CERTIFICATIONS = [
+  // Completed (2022-2025)
+  { id: "c-java-silver", name: "Java Silver", cat: "Development", done: true },
+  { id: "c-python-basic", name: "Python基礎エンジニア", cat: "Development", done: true },
+  { id: "c-python-data", name: "Pythonデータ分析", cat: "Development", done: true },
+  { id: "c-sql-silver", name: "SQL Silver", cat: "Database", done: true },
+  { id: "c-dba-silver", name: "DBA Silver", cat: "Database", done: true },
+  { id: "c-lpic1", name: "LPIC1", cat: "Infrastructure", done: true },
+  { id: "c-html1", name: "HTML5 Level1", cat: "Development", done: true },
+  { id: "c-excel-sp", name: "Excel Specialist", cat: "Business", done: true },
+  { id: "c-excel-vba", name: "Excel VBA", cat: "Business", done: true },
+  { id: "c-fe", name: "基本情報", cat: "National", done: true },
+  { id: "c-ap", name: "応用情報", cat: "National", done: true },
+  { id: "c-jstqb", name: "JSTQB FL", cat: "Testing", done: true },
+  { id: "c-bk3", name: "簿記3級", cat: "Business", done: true },
+  { id: "c-fp3", name: "FP3級", cat: "Business", done: true },
+  { id: "c-ba3", name: "ビジネス会計3級", cat: "Business", done: true },
+  { id: "c-aws-saa", name: "AWS SAA", cat: "AWS", done: true },
+  { id: "c-aws-dva", name: "AWS DVA", cat: "AWS", done: true },
+  { id: "c-aws-soa", name: "AWS SOA", cat: "AWS", done: true },
+  { id: "c-g-kentei", name: "G検定", cat: "AI", done: true },
+  { id: "c-sn-csa", name: "SN CSA", cat: "ServiceNow", done: true },
+  { id: "c-sn-disc", name: "SN Discovery", cat: "ServiceNow", done: true },
+  // 2026 Targets
+  { id: "c-pmp", name: "PMP", cat: "Management", done: false },
+  { id: "c-it-strat", name: "ITストラテジスト", cat: "National", done: false },
+  { id: "c-sc", name: "セキュリティスペシャリスト", cat: "National", done: false },
+  { id: "c-e-kentei", name: "E検定", cat: "AI", done: false },
+  { id: "c-az900", name: "Azure AI 900", cat: "Azure", done: false },
+  { id: "c-az104", name: "Azure AZ-104", cat: "Azure", done: false },
+  { id: "c-aws-sap", name: "AWS SAP", cat: "AWS", done: false },
+  { id: "c-aws-devops", name: "AWS DevOps", cat: "AWS", done: false },
+  { id: "c-sn-df", name: "SN DF", cat: "ServiceNow", done: false },
+  { id: "c-sn-vr", name: "SN VR", cat: "ServiceNow", done: false },
+  { id: "c-toeic", name: "TOEIC 800点", cat: "Language", done: false },
+];
+
+const SKILL_CATEGORIES = [
+  {
+    name: "IT基礎 - 歴史",
+    items: [
+      { name: "コンピュータの歴史", done: true },
+      { name: "WEBの歴史", done: true },
+      { name: "アルゴリズムとデータ構造の歴史", done: true },
+    ],
+  },
+  {
+    name: "上流特化",
+    items: [
+      { name: "DX", done: true },
+      { name: "要件定義〜基本設計", done: true },
+    ],
+  },
+  {
+    name: "下流特化",
+    items: [
+      { name: "オブジェクト指向", done: true },
+      { name: "デザインパターン", done: true },
+      { name: "アルゴリズムとデータ構造", done: true },
+      { name: "リファクタリング", done: true },
+      { name: "API", done: true },
+      { name: "WEBアプリ", done: true },
+      { name: "テスト", done: true },
+      { name: "HTML+CSS+JavaScript", done: true },
+      { name: "Linux", done: true },
+      { name: "SQL", done: true },
+      { name: "GIT", done: true },
+      { name: "Docker", done: true },
+    ],
+  },
+  {
+    name: "AWS",
+    items: [
+      { name: "AWS 概論", done: true },
+      { name: "AWSコンテナCI/CD", done: true },
+      { name: "AWS CLI", done: true },
+      { name: "AWS cloudtech", done: false },
+      { name: "AWS AI", done: false },
+      { name: "AWSモダン", done: false },
+      { name: "AWSエヴァンジェリスト", done: false },
+      { name: "AWSスキルセット", done: false },
+      { name: "AWS運用入門", done: false },
+      { name: "AWSコスト最適", done: false },
+    ],
+  },
+  {
+    name: "ポートフォリオ",
+    items: [
+      { name: "Django", done: true },
+      { name: "React", done: true },
+      { name: "Django+React演習", done: false },
+      { name: "TypeScript", done: false },
+      { name: "Redux Toolkit", done: false },
+      { name: "Django+Reactアプリ", done: false },
+      { name: "Django+Reactテスト", done: false },
+      { name: "ChatGPT連携", done: false },
+    ],
+  },
+  {
+    name: "Azure",
+    items: [
+      { name: "Azure Administrator (AZ-104)", done: false },
+      { name: "Azure AI Engineer (AI-102)", done: false },
+      { name: "Azure Developer (AZ-204)", done: false },
+      { name: "Azure Security Engineer (AZ-500)", done: false },
+      { name: "Azure Data Scientist (DP-100)", done: false },
+    ],
+  },
+  {
+    name: "ビジネス基礎",
+    items: [
+      { name: "起業", done: false },
+      { name: "会社法", done: false },
+      { name: "会計学", done: false },
+      { name: "行動経済学", done: false },
+      { name: "マーケティング", done: false },
+      { name: "思考法", done: false },
+      { name: "デザイン", done: false },
+      { name: "コミュニケーション", done: false },
+      { name: "プレゼン", done: false },
+      { name: "リーダー", done: false },
+      { name: "マネジメント", done: false },
+      { name: "マナー", done: false },
+    ],
+  },
+  {
+    name: "その他",
+    items: [
+      { name: "瞑想", done: false },
+      { name: "筋トレ", done: false },
+      { name: "時事問題", done: false },
+      { name: "英会話", done: false },
+      { name: "正規表現", done: false },
+      { name: "ラズベリーパイ", done: false },
+    ],
+  },
+];
+
 // ===== Health Check Items =====
 const HEALTH_ITEMS = [
   {
@@ -595,6 +849,182 @@ function updateStats() {
     mins > 0 ? `${hours}h${mins}m` : `${hours}h`;
 }
 
+// ===== Career =====
+let certChecked = loadData("certChecked", {});
+
+function renderCareerRoadmap() {
+  const container = document.getElementById("careerRoadmap");
+  const currentYear = new Date().getFullYear();
+
+  container.innerHTML = ROADMAP.map((year) => {
+    let statusClass = year.status;
+    if (year.status === "current") statusClass = "current";
+    else if (year.year < currentYear) statusClass = "done";
+    else statusClass = "future";
+
+    return `
+      <div class="roadmap-year ${statusClass}">
+        <div class="roadmap-marker">
+          <div class="roadmap-dot"></div>
+          <div class="roadmap-line"></div>
+        </div>
+        <div class="roadmap-content">
+          <div class="roadmap-header">
+            <span class="roadmap-year-label">${year.year}</span>
+            <span class="roadmap-age">${year.age}歳</span>
+            <span class="roadmap-salary">${year.salary}</span>
+          </div>
+          <div class="roadmap-theme">${year.theme}</div>
+          <div class="roadmap-items">
+            ${year.items.map((item) => `<span class="roadmap-item">${item}</span>`).join("")}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderMonthlyPlan() {
+  const container = document.getElementById("monthlyPlan");
+  const currentMonth = new Date().getMonth() + 1;
+
+  container.innerHTML = MONTHLY_PLAN_2026.map((m) => {
+    let status = m.status;
+    if (m.month < currentMonth && new Date().getFullYear() === 2026) status = "done";
+    else if (m.month === currentMonth && new Date().getFullYear() === 2026) status = "current";
+
+    return `
+      <div class="month-card ${status}">
+        <div class="month-num">${m.month}月</div>
+        <div class="month-tasks">${m.tasks}</div>
+        <div class="month-status">${status === "done" ? "\u2713" : status === "current" ? "NOW" : ""}</div>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderCertifications() {
+  const container = document.getElementById("certGrid");
+  const filterContainer = document.getElementById("certFilter");
+  const statsContainer = document.getElementById("certStats");
+
+  // Merge persisted state
+  const certs = CERTIFICATIONS.map((c) => ({
+    ...c,
+    done: c.done || !!certChecked[c.id],
+  }));
+
+  // Stats
+  const total = certs.length;
+  const completed = certs.filter((c) => c.done).length;
+  const pct = Math.round((completed / total) * 100);
+
+  statsContainer.innerHTML = `
+    <div class="cert-progress">
+      <div class="cert-progress-bar" style="width: ${pct}%"></div>
+    </div>
+    <div class="cert-progress-text">${completed} / ${total} (${pct}%)</div>
+  `;
+
+  // Category filters
+  const cats = [...new Set(certs.map((c) => c.cat))];
+  filterContainer.innerHTML = `
+    <button class="cert-filter-btn active" data-cat="all">All</button>
+    ${cats.map((c) => `<button class="cert-filter-btn" data-cat="${c}">${c}</button>`).join("")}
+  `;
+
+  function renderGrid(filter) {
+    const filtered = filter === "all" ? certs : certs.filter((c) => c.cat === filter);
+    container.innerHTML = filtered
+      .map(
+        (c) => `
+      <div class="cert-item ${c.done ? "cert-done" : "cert-pending"}" data-cert="${c.id}">
+        <div class="cert-check">${c.done ? "\u2713" : ""}</div>
+        <div class="cert-info">
+          <div class="cert-name">${c.name}</div>
+          <div class="cert-cat">${c.cat}</div>
+        </div>
+      </div>
+    `
+      )
+      .join("");
+
+    // Toggle certs that aren't originally done
+    container.querySelectorAll(".cert-item").forEach((el) => {
+      el.addEventListener("click", () => {
+        const id = el.dataset.cert;
+        const orig = CERTIFICATIONS.find((c) => c.id === id);
+        if (orig && orig.done) return; // Cannot uncheck originally completed
+        certChecked[id] = !certChecked[id];
+        if (!certChecked[id]) delete certChecked[id];
+        saveData("certChecked", certChecked);
+        renderCertifications();
+      });
+    });
+  }
+
+  renderGrid("all");
+
+  filterContainer.querySelectorAll(".cert-filter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterContainer
+        .querySelectorAll(".cert-filter-btn")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderGrid(btn.dataset.cat);
+    });
+  });
+}
+
+function renderSkillCategories() {
+  const container = document.getElementById("skillCategories");
+
+  container.innerHTML = SKILL_CATEGORIES.map((cat) => {
+    const done = cat.items.filter((i) => i.done).length;
+    const total = cat.items.length;
+    const pct = Math.round((done / total) * 100);
+
+    return `
+      <div class="skill-cat">
+        <div class="skill-cat-header" data-toggle="skill">
+          <div class="skill-cat-name">${cat.name}</div>
+          <div class="skill-cat-progress">
+            <div class="skill-cat-bar" style="width: ${pct}%"></div>
+          </div>
+          <div class="skill-cat-count">${done}/${total}</div>
+        </div>
+        <div class="skill-cat-items">
+          ${cat.items
+            .map(
+              (item) => `
+            <div class="skill-item ${item.done ? "skill-done" : ""}">
+              <span class="skill-dot"></span>
+              ${item.name}
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // Toggle expand
+  container.querySelectorAll(".skill-cat-header").forEach((header) => {
+    header.addEventListener("click", () => {
+      const cat = header.parentElement;
+      cat.classList.toggle("expanded");
+    });
+  });
+}
+
+function renderCareer() {
+  renderCareerRoadmap();
+  renderMonthlyPlan();
+  renderCertifications();
+  renderSkillCategories();
+}
+
 // ===== Initialize =====
 function init() {
   updateDateDisplay();
@@ -605,6 +1035,7 @@ function init() {
   updateSNSStatus();
   renderHealthCheck();
   updateStats();
+  renderCareer();
 
   // Update every 30 seconds
   setInterval(() => {
