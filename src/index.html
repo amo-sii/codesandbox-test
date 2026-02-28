@@ -1,13 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <title>Parcel Sandbox</title>
+    <title>Life Optimizer - Daily Schedule</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <div id="app"></div>
-    <p>修正しました</p>
+    <div id="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <h1 class="logo">Life Optimizer</h1>
+          <span class="subtitle">壊れず、鈍らず、伸び続ける</span>
+        </div>
+        <div class="header-right">
+          <div class="date-display" id="dateDisplay"></div>
+          <div class="streak-badge" id="streakBadge">
+            <span class="streak-fire">&#x1f525;</span>
+            <span id="streakCount">0</span> days
+          </div>
+        </div>
+      </header>
+
+      <!-- Current Activity Banner -->
+      <section class="current-activity" id="currentActivity">
+        <div class="current-time" id="currentTime"></div>
+        <div class="current-info">
+          <div class="current-label">NOW</div>
+          <div class="current-task" id="currentTask">Loading...</div>
+          <div class="current-tip" id="currentTip"></div>
+        </div>
+        <div class="next-up" id="nextUp"></div>
+      </section>
+
+      <!-- Navigation Tabs -->
+      <nav class="tabs">
+        <button class="tab active" data-tab="schedule">Schedule</button>
+        <button class="tab" data-tab="supplements">Supplements</button>
+        <button class="tab" data-tab="sns">SNS Control</button>
+        <button class="tab" data-tab="health">Health Check</button>
+        <button class="tab" data-tab="stats">Stats</button>
+      </nav>
+
+      <!-- Tab Content -->
+      <main class="content">
+        <!-- Schedule Tab -->
+        <div class="tab-content active" id="tab-schedule">
+          <div class="timeline" id="timeline"></div>
+        </div>
+
+        <!-- Supplements Tab -->
+        <div class="tab-content" id="tab-supplements">
+          <div class="suppl-section">
+            <h2 class="section-title">
+              <span class="section-icon morning-icon">&#x2600;&#xfe0f;</span>
+              Morning Supplements (覚醒系)
+            </h2>
+            <p class="section-desc">朝食時に摂取 - 覚醒・集中をサポート</p>
+            <div class="suppl-grid" id="morningSupplements"></div>
+          </div>
+          <div class="suppl-section">
+            <h2 class="section-title">
+              <span class="section-icon evening-icon">&#x1f319;</span>
+              Evening Supplements (鎮静系)
+            </h2>
+            <p class="section-desc">夕食時に摂取 - 回復・睡眠をサポート</p>
+            <div class="suppl-grid" id="eveningSupplements"></div>
+          </div>
+        </div>
+
+        <!-- SNS Control Tab -->
+        <div class="tab-content" id="tab-sns">
+          <div class="sns-container">
+            <div class="sns-status" id="snsStatus">
+              <div class="sns-icon" id="snsIcon"></div>
+              <div class="sns-label" id="snsLabel"></div>
+              <div class="sns-timer" id="snsTimer"></div>
+            </div>
+            <div class="sns-rules">
+              <h3>SNS Control Rules</h3>
+              <div class="rule-card blocked">
+                <div class="rule-time">6:00 - 21:00</div>
+                <div class="rule-label">BLOCKED</div>
+                <div class="rule-desc">朝〜仕事中：完全遮断</div>
+              </div>
+              <div class="rule-card allowed">
+                <div class="rule-time">21:00 - 21:20</div>
+                <div class="rule-label">ALLOWED</div>
+                <div class="rule-desc">「見ていい時間」があるから脳が暴れない</div>
+              </div>
+              <div class="rule-card blocked">
+                <div class="rule-time">21:20 - 6:00</div>
+                <div class="rule-label">BLOCKED</div>
+                <div class="rule-desc">入眠準備 - デジタルデトックス</div>
+              </div>
+            </div>
+            <div class="sns-tips">
+              <h3>物理遮断テクニック</h3>
+              <ul>
+                <li>スマホは白黒表示にする</li>
+                <li>SNSは2階層目フォルダに配置</li>
+                <li>通知は"人間のみ"に設定</li>
+                <li>意志力に頼らない＝環境で制御</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Health Check Tab -->
+        <div class="tab-content" id="tab-health">
+          <div class="health-container">
+            <div class="health-header">
+              <h2>撤退ライン Monitor</h2>
+              <p>以下が2週間続いたら → 勉強②を削る<br />削る＝負けではない。壊れない＝勝ち</p>
+            </div>
+            <div class="health-checklist" id="healthChecklist"></div>
+            <div class="health-history">
+              <h3>過去14日間のトレンド</h3>
+              <div class="health-chart" id="healthChart"></div>
+            </div>
+            <div class="health-verdict" id="healthVerdict"></div>
+          </div>
+        </div>
+
+        <!-- Stats Tab -->
+        <div class="tab-content" id="tab-stats">
+          <div class="stats-container">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-value" id="totalDays">0</div>
+                <div class="stat-label">Total Days</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value" id="currentStreak">0</div>
+                <div class="stat-label">Current Streak</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value" id="completionRate">0%</div>
+                <div class="stat-label">Completion Rate</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value" id="studyHours">0h</div>
+                <div class="stat-label">Study Hours</div>
+              </div>
+            </div>
+            <div class="stats-philosophy">
+              <h3>Success Structure</h3>
+              <div class="philosophy-grid">
+                <div class="phil-card success">
+                  <h4>&#x2705; 成功パターン</h4>
+                  <ul>
+                    <li>環境で勝つ</li>
+                    <li>神経系を守る</li>
+                    <li>撤退ラインが明確</li>
+                    <li>成果が出るまで"淡々"</li>
+                  </ul>
+                </div>
+                <div class="phil-card failure">
+                  <h4>&#x274c; 失敗パターン</h4>
+                  <ul>
+                    <li>情報過多</li>
+                    <li>やりすぎ</li>
+                    <li>意志力依存</li>
+                    <li>短期の最適化</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="projection">
+                <h3>3年継続の確率論的未来</h3>
+                <div class="projection-items">
+                  <div class="proj-item">
+                    <div class="proj-bar" style="width: 85%"></div>
+                    <span>学習量：一般人の3〜5倍</span>
+                  </div>
+                  <div class="proj-item">
+                    <div class="proj-bar" style="width: 97%"></div>
+                    <span>集中の質：上位1〜3％</span>
+                  </div>
+                  <div class="proj-item">
+                    <div class="proj-bar" style="width: 90%"></div>
+                    <span>心身安定性：上位10％以内</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
 
     <script src="./index.mjs" type="module"></script>
   </body>
